@@ -5,8 +5,6 @@ import java.security.NoSuchAlgorithmException;
 /**
  * This class represents a password object for a password cracker system.
  *
- * @author Michelle & <YOUR NAME HERE>
- *
  */
 public class Password {
   private String password; // the actual password
@@ -31,8 +29,6 @@ public class Password {
    * @throws IllegalArgumentException if the password is longer than the defined MAX_LENGTH or empty
    *                                  OR the number of occurrences is outside of the range
    *                                  (0,MAX_OCCURRENCES]
-   * 
-   * @author Michelle
    */
   public Password(String password, int occurrences) {
     if (password.length() > MAX_LENGTH || password.isBlank())
@@ -80,8 +76,6 @@ public class Password {
    * Computes and sets the hashPassword by hashing the password using the SHA-1 protocol into a
    * string in hexadecimal. Code adapted from the following online resource:
    * https://www.geeksforgeeks.org/sha-1-hash-in-java/
-   *
-   * @author Michelle
    */
   private void computeAndSetHashedPassword() {
     try {
@@ -104,8 +98,6 @@ public class Password {
    *
    * @param s, the string to compute the strength rating
    * @return the strength rating of the string
-   *
-   * @author Michelle
    */
   private static float computeStrengthRating(String s) {
     int charSet = 0;
@@ -127,8 +119,6 @@ public class Password {
    * @param obj, the object to check to see if it is equal
    * @return true if obj is a Password, occurrences, strength ratings, passwords, and
    *         hashedPasswords are equal false otherwise
-   *
-   * @author Michelle
    */
   @Override
   public boolean equals(Object obj) {
@@ -147,8 +137,6 @@ public class Password {
    * Returns a string representation of a password object.
    *
    * @return The string representation in the form "PASSWORD (HASHED_PASSWORD): OCURRENCES [STRENGTH_RATING]"
-   *
-   * @author Michelle
    */
   @Override
   public String toString() {
@@ -163,8 +151,6 @@ public class Password {
    * @param a     the data field to use when making the comparison.
    * @return <0 if this is less than other, >0 if this is greater than other, and 0 if they are
    *         equal
-   *
-   * @author Ekam Ghotra
    */
   public int compareTo(Password other, Attribute a) {
     switch (a) {
